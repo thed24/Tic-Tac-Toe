@@ -106,14 +106,14 @@ namespace TicTacToe
                     posY = playerMove[0] - '0' - 1; //Translate user input into Y-Axis coordinate ([1],2)
                                                     //Subtracting one to work with array
 
-                    while (playerMove.Length != 3 || playerMove[1].ToString() != ",") //Loops while user attempts to place piece on non-empty space
+                    if (playerMove.Length != 3 || playerMove[1].ToString() != ",") //Checks if input matches x,y format
                     {
                         Console.Clear();
                         Console.Write("Please use the format as follows (1,2) and try again: \n\n");
                         MainGame(ref boardPos, currentPlayerX); //Pass important variables and recall game function so that player has chance to input correct data
                     }
 
-                    while (boardPos[posX, posY] != ".") //Loops while user attempts to place piece on non-empty space
+                    if (boardPos[posX, posY] != ".") //Checks if user attempts to place piece on non-empty space
                     {
                         Console.Clear();
                         Console.Write("That spot has already been used, try another one: \n\n");
